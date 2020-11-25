@@ -4,9 +4,14 @@ import static java.lang.Math.pow;
 
 public class TaylorSeries {
 
-    public static double sinTaylorA(double x) {
+    public static double sinTaylorA(double x, int iterationAmount) {
+
+        if (iterationAmount <= 0) {
+            throw new IllegalArgumentException("Iteration amount must be more than 0");
+        }
+
         double sum = 0;
-        for (int i = 0; i < ITERATION_AMOUNT; i++) {
+        for (int i = 0; i < iterationAmount; i++) {
             sum += pow(-1, i) * pow(x, 2 * i + 1) / factorial(2 * i + 1);
         }
 
@@ -26,6 +31,4 @@ public class TaylorSeries {
         }
         return result;
     }
-
-    private static int ITERATION_AMOUNT = 4;
 }
