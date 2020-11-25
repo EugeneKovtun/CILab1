@@ -4,7 +4,7 @@ import static java.lang.Math.pow;
 
 public class TaylorSeries {
 
-    public static double sinTaylor(double x) {
+    public static double sinTaylorA(double x) {
         double sum = 0;
         for (int i = 0; i < ITERATION_AMOUNT; i++) {
             sum += pow(-1, i) * pow(x, 2 * i + 1) / factorial(2 * i + 1);
