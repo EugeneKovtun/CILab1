@@ -12,13 +12,13 @@ class TaylorSeriesTest {
     void sinTaylorShouldCountSinus() {
         double epsilon = 0.00001;
         assertTrue(Math.abs(
-                Math.sin(1) - TaylorSeries.sinTaylor(1, 10)
+                Math.sin(1) - TaylorSeries.sinTaylorA(1, 10)
         ) < epsilon);
     }
 
     @Test
     void sinTaylorShouldThrowExceptionOnNegativeIterationCount() {
-        assertThrows(IllegalArgumentException.class, ()-> TaylorSeries.sinTaylor(1, -1));
+        assertThrows(IllegalArgumentException.class, ()-> TaylorSeries.sinTaylorA(1, -1));
     }
 
 }
